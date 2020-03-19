@@ -49,9 +49,16 @@ for (v in 1:length(vars)) {
     
     #List files
     #need to make sure to only list daily files (and with or without synth)
-    #and use recursive for the period 2018-2019 which are in subfolders
-    files <- list.files(d, full.names=TRUE, pattern="day-[0-9]{8}-[0-9]{8}.flt|day-[0-9]{8}-[0-9]{8}_synth.flt",
-                        recursive=TRUE)
+    #only read 2019 subfolder because 2018 files already in main folder
+    
+    if (grepl("2018-2019", d)) {
+      
+      files <- list.files(paste0(d, "/2019/"), full.names=TRUE, 
+                          pattern="day-[0-9]{8}-[0-9]{8}.flt|day-[0-9]{8}-[0-9]{8}_synth.flt")
+      
+    } else {
+      files <- list.files(d, full.names=TRUE, pattern="day-[0-9]{8}-[0-9]{8}.flt|day-[0-9]{8}-[0-9]{8}_synth.flt")
+    }
     
     
     
@@ -112,15 +119,15 @@ for (v in 1:length(vars)) {
 
 
 
-
-
-
-
-
-
-
-
-
+# 
+# 
+# 
+# sorted_dates <- sort(all_dates[[v]])
+# 
+# diffs <- diff(sorted_dates)
+# 
+# which(diffs !=1)
+# 
 
 
 
