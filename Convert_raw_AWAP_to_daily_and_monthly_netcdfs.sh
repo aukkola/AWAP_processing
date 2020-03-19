@@ -47,7 +47,7 @@ do
   #Temporary file name
   daily_file_temp="$outdir/AWAP_daily_$V_temp.nc"
   
-  cdo mergetime $files $daily_file_temp
+  cdo mergetime $INDIR/daily_temp/$V/$files $daily_file_temp
   
   #Get years and rewrite file name
   years=(`cdo showyear $daily_file_temp`)
