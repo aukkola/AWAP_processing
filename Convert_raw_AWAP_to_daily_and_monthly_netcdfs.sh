@@ -19,7 +19,7 @@ vars=`ls $INDIR/daily_temp`
 
 
 #First run R script to convert from flt to netcdf
-Rscript "/g/data/w35/amu561/Australian_bushfires/scripts/R/Convert_raw_AWAP_files_to_netcdf.R"
+Rscript Convert_raw_AWAP_files_to_netcdf.R
 
 
 
