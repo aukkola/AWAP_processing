@@ -29,6 +29,8 @@ all_dates <- list()
 #Loop through variables
 for (v in 1:length(vars)) {
   
+  print(paste0("Variable: ", v))
+  
   #Initialise
   all_dates[[v]] <- vector()
   
